@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dkg-tlan"
+version = "0.1.0"
+description = "Dynamic Knowledge Graph with Temporal Logical Attention Network for cloud-native anomaly detection and root-cause localization"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+  { name = "Sunil Kumar Mudusu" },
+  { name = "Manasa Pendyala" },
+  { name = "Sunil Gentyala" },
+  { name = "Suresh Kumar Darisi" },
+]
+dependencies = [
+  "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+.DS_Store
+
+# manuscript files are never published here (see project rules)
+paper/
+*.docx
+*.tex
+*.pdf
+*.bib

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKG-TLAN | Dynamic Knowledge Graph with Temporal Logical Attention Network</title>
+<meta name="description" content="DKG-TLAN is a hybrid Dynamic Knowledge Graph + Temporal Logical Attention Network framework for anomaly detection and root-cause localization in cloud-native microservice environments.">
+<meta property="og:title" content="DKG-TLAN">
+<meta property="og:description" content="Dynamic Knowledge Graph + Temporal Logical Attention Network for cloud-native anomaly detection and root-cause localization.">
+<meta property="og:image" content="https://sunilgentyala.github.io/DKG-TLAN/assets/logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg-alt: #10162a;
+    --card: #131a30;
+    --border: #232c47;
+    --text: #e8ecf7;
+    --muted: #96a0bd;
+    --accent: #5eead4;
+    --accent-2: #a78bfa;
+    --accent-3: #f472b6;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  img { max-width: 100%; }
+
+  header.hero {
+    padding: 72px 0 56px;
+    background: radial-gradient(circle at 15% 15%, rgba(94,234,212,0.14), transparent 45%),
+                radial-gradient(circle at 85% 0%, rgba(167,139,250,0.14), transparent 42%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-top { display: flex; align-items: center; gap: 18px; margin-bottom: 22px; }
+  .hero-top img { width: 56px; height: 56px; border-radius: 14px; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(94,234,212,0.4);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin: 0 0 14px;
+    line-height: 1.18;
+  }
+  h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .lede {
+    font-size: 1.12rem;
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 0 30px;
+  }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .btn-primary { background: var(--accent); color: #062521; }
+  .btn-primary:hover { background: #7ff2df; text-decoration: none; }
+  .btn-secondary { border: 1px solid var(--border); color: var(--text); }
+  .btn-secondary:hover { border-color: var(--accent); text-decoration: none; }
+
+  section { padding: 52px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  h2 { font-size: 1.5rem; margin: 0 0 10px; }
+  .section-sub { color: var(--muted); margin: 0 0 28px; max-width: 700px; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 700px) { .grid, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1.02rem; color: var(--accent); }
+  .card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+
+  .stat { text-align: center; padding: 18px 10px; }
+  .stat .num { font-size: 1.9rem; font-weight: 700; color: var(--accent); }
+  .stat .lbl { color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+
+  pre {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #cdd6f4;
+  }
+  code { font-family: "SF Mono", Menlo, Consolas, monospace; }
+  .card code, p code { background: var(--bg-alt); padding: 2px 6px; border-radius: 4px; font-size: 0.88em; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  th { color: var(--accent); font-weight: 600; }
+  td { color: var(--muted); }
+  tr:last-child td { color: var(--text); font-weight: 600; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+  .table-wrap table { border: none; }
+  .table-wrap th, .table-wrap td { border-color: var(--border); }
+
+  .authors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (max-width: 700px) { .authors { grid-template-columns: 1fr; } }
+  .author-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .author-card .name { font-weight: 600; color: var(--text); }
+  .author-card .role { color: var(--muted); font-size: 0.86rem; margin-top: 2px; }
+
+  footer { padding: 34px 0; color: var(--muted); font-size: 0.85rem; text-align: center; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <img src="assets/logo.svg" alt="DKG-TLAN logo">
+      <span class="eyebrow">Cloud-native anomaly detection</span>
+    </div>
+    <h1>Dynamic Knowledge Graph<br>with <span>Temporal Logical Attention Network</span></h1>
+    <p class="lede">
+      A hybrid framework that fuses an adaptive, sparsified knowledge graph of
+      microservice, pod, and physical-node relationships with a dual
+      BiLSTM + GAT attention network, closing the visibility gap between
+      logical service failures and shared physical hardware bottlenecks.
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://github.com/sunilgentyala/DKG-TLAN">View on GitHub</a>
+      <a class="btn btn-secondary" href="#architecture">Architecture</a>
+      <a class="btn btn-secondary" href="#results">Results</a>
+    </div>
+  </div>
+</header>
+
+<section id="overview">
+  <div class="wrap">
+    <h2>Why DKG-TLAN</h2>
+    <p class="section-sub">
+      Microservices scale, fail, and migrate across nodes faster than static
+      dependency graphs can track, and logs fragmented across Istio, Kubernetes,
+      and node-level telemetry make manual correlation impractical. DKG-TLAN
+      targets the specific failure mode existing detectors miss: distinguishing
+      a logical service-level bug from a shared physical hardware bottleneck.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Dynamic Knowledge Graph</h3>
+        <p>Reconstructs physical-to-virtual structural relationships from Istio traces, raw logs, and Kubernetes orchestration metadata via adaptive, sparsified adjacency learning.</p>
+      </div>
+      <div class="card">
+        <h3>Temporal Logical Attention</h3>
+        <p>Parallel multi-scale Conv1D feature extraction fused with a dual BiLSTM (temporal) + GAT (structural) branch, capturing sequential and topological patterns simultaneously.</p>
+      </div>
+      <div class="card">
+        <h3>Root-Cause Localization</h3>
+        <p>A learnable gate fuses temporal and structural evidence into a single anomaly score, ranking the true physical point of failure via PR@K and MRR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <h2>Architecture</h2>
+    <p class="section-sub">End-to-end pipeline from raw telemetry to root-cause ranking.</p>
+    <pre>Istio traces + raw logs + K8s orchestration metadata
+              │
+              ▼
+   ┌─────────────────────┐
+   │  Dynamic Knowledge   │   adaptive adjacency learning + sparsification
+   │  Graph (DKG)         │
+   └──────────┬───────────┘
+              │ adjacency matrix
+              ▼
+   ┌─────────────────────┐
+   │  Multi-Scale Feature │   Conv1D kernels {3, 5, 7} + softmax fusion
+   │  Extraction          │
+   └──────────┬───────────┘
+              │
+      ┌───────┴────────┐
+      ▼                ▼
+  ┌────────┐      ┌──────────┐
+  │ BiLSTM │      │   GAT    │   temporal vs. logical/structural branches
+  │(h_temp)│      │ (h_log)  │
+  └───┬────┘      └────┬─────┘
+      └───────┬─────────┘
+              ▼
+   ┌─────────────────────┐
+   │ Cross-Layer          │   cosine correlation + learnable gate
+   │ Correlation & Fusion │
+   └──────────┬───────────┘
+              ▼
+   ┌─────────────────────┐
+   │ GMM Anomaly Scoring  │   NLL score + EMA drift adaptation
+   └──────────┬───────────┘
+              ▼
+     anomaly score + root-cause ranking (PR@K, MRR)</pre>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <h2>Results on Sock Shop</h2>
+    <p class="section-sub">Evaluated on the Sock Shop polyglot microservice benchmark (13 services) deployed on AWS EKS, against ResNet-50, LSTM, and GNN baselines.</p>
+    <div class="grid-4" style="margin-bottom:24px;">
+      <div class="card stat"><div class="num">99.75%</div><div class="lbl">Accuracy</div></div>
+      <div class="card stat"><div class="num">98.53%</div><div class="lbl">Precision</div></div>
+      <div class="card stat"><div class="num">99.64%</div><div class="lbl">Recall</div></div>
+      <div class="card stat"><div class="num">2.9 ms</div><div class="lbl">Mean inference time</div></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>MRR</th></tr>
+        <tr><td>ResNet-50</td><td>92.45%</td><td>89.12%</td><td>90.55%</td><td>89.33%</td><td>0.684</td></tr>
+        <tr><td>LSTM</td><td>94.67%</td><td>92.34%</td><td>93.12%</td><td>92.73%</td><td>0.752</td></tr>
+        <tr><td>GNN</td><td>95.82%</td><td>94.10%</td><td>95.22%</td><td>94.66%</td><td>0.841</td></tr>
+        <tr><td>Proposed DKG-TLAN</td><td>99.75%</td><td>98.53%</td><td>99.64%</td><td>98.46%</td><td>0.963</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="quickstart">
+  <div class="wrap">
+    <h2>Quickstart</h2>
+    <p class="section-sub">A framework-faithful reference implementation of the core modules (Eq. 1&ndash;18 in the paper).</p>
+    <pre>pip install -e ".[dev]"
+
+python -c "
+import torch
+from dkg_tlan import DynamicKnowledgeGraph, TemporalLogicalAttentionNetwork
+
+node_features = torch.randn(13, 16)
+window = torch.randn(1, 32, 16)
+
+dkg = DynamicKnowledgeGraph(feature_dim=16)
+adjacency = dkg(node_features)['adjacency']
+
+tlan = TemporalLogicalAttentionNetwork(input_dim=16, hidden_dim=8)
+out = tlan(window, node_features, adjacency)
+print(out['h_temp'].shape, out['h_log'].shape)
+"
+
+pytest tests/ -v</pre>
+  </div>
+</section>
+
+<section id="authors">
+  <div class="wrap">
+    <h2>Authors</h2>
+    <div class="authors">
+      <div class="author-card"><div class="name">Sunil Kumar Mudusu</div><div class="role">Principal AI and Data Engineer, Church Mutual Insurance Company</div></div>
+      <div class="author-card"><div class="name">Manasa Pendyala</div><div class="role">Senior Member of Technical Staff, Oracle</div></div>
+      <div class="author-card"><div class="name">Sunil Gentyala</div><div class="role">Lead Cybersecurity &amp; AI Security Consultant, HCLTech</div></div>
+      <div class="author-card"><div class="name">Suresh Kumar Darisi</div><div class="role">Senior Systems Engineer, Rocket Software Inc.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    DKG-TLAN &middot; MIT License &middot; <a href="https://github.com/sunilgentyala/DKG-TLAN">github.com/sunilgentyala/DKG-TLAN</a>
+  </div>
+</footer>
+
+</body>
+</html>

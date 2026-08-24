@@ -1,0 +1,231 @@
+Generating synthetic dataset...
+Train windows: 10500  Test windows (original imbalanced dist.): 4500
+Train class counts: {0: 9906, 1: 210, 2: 190, 3: 194}
+Test class counts (imbalanced): {0: 4224, 1: 80, 2: 100, 3: 96}
+Downsampled (3:1) train windows: 2376
+
+=== Training Proposed_DKG-TLAN ===
+  epoch 1/25  avg loss 0.0540
+  epoch 2/25  avg loss 0.0426
+  epoch 3/25  avg loss 0.0319
+  epoch 4/25  avg loss 0.0236
+  epoch 5/25  avg loss 0.0200
+  epoch 6/25  avg loss 0.0179
+  epoch 7/25  avg loss 0.0162
+  epoch 8/25  avg loss 0.0158
+  epoch 9/25  avg loss 0.0144
+  epoch 10/25  avg loss 0.0129
+  epoch 11/25  avg loss 0.0122
+  epoch 12/25  avg loss 0.0098
+  epoch 13/25  avg loss 0.0087
+  epoch 14/25  avg loss 0.0086
+  epoch 15/25  avg loss 0.0086
+  epoch 16/25  avg loss 0.0070
+  epoch 17/25  avg loss 0.0062
+  epoch 18/25  avg loss 0.0064
+  epoch 19/25  avg loss 0.0056
+  epoch 20/25  avg loss 0.0048
+  epoch 21/25  avg loss 0.0049
+  epoch 22/25  avg loss 0.0042
+  epoch 23/25  avg loss 0.0042
+  epoch 24/25  avg loss 0.0040
+  epoch 25/25  avg loss 0.0035
+  Proposed_DKG-TLAN: acc=0.9876 f1=0.9252 roc_auc=0.9971 pr_auc=0.9827
+
+=== Training DKG-TLAN_wo_DKG ===
+  epoch 1/25  avg loss 0.0548
+  epoch 2/25  avg loss 0.0410
+  epoch 3/25  avg loss 0.0270
+  epoch 4/25  avg loss 0.0207
+  epoch 5/25  avg loss 0.0182
+  epoch 6/25  avg loss 0.0167
+  epoch 7/25  avg loss 0.0146
+  epoch 8/25  avg loss 0.0131
+  epoch 9/25  avg loss 0.0116
+  epoch 10/25  avg loss 0.0094
+  epoch 11/25  avg loss 0.0092
+  epoch 12/25  avg loss 0.0072
+  epoch 13/25  avg loss 0.0065
+  epoch 14/25  avg loss 0.0057
+  epoch 15/25  avg loss 0.0052
+  epoch 16/25  avg loss 0.0046
+  epoch 17/25  avg loss 0.0043
+  epoch 18/25  avg loss 0.0040
+  epoch 19/25  avg loss 0.0041
+  epoch 20/25  avg loss 0.0037
+  epoch 21/25  avg loss 0.0035
+  epoch 22/25  avg loss 0.0034
+  epoch 23/25  avg loss 0.0031
+  epoch 24/25  avg loss 0.0030
+  epoch 25/25  avg loss 0.0028
+  DKG-TLAN_wo_DKG: acc=0.9964 f1=0.9753 roc_auc=0.9942 pr_auc=0.9855
+
+=== Training DKG-TLAN_wo_MultiScale ===
+  epoch 1/25  avg loss 0.0540
+  epoch 2/25  avg loss 0.0446
+  epoch 3/25  avg loss 0.0326
+  epoch 4/25  avg loss 0.0248
+  epoch 5/25  avg loss 0.0199
+  epoch 6/25  avg loss 0.0179
+  epoch 7/25  avg loss 0.0168
+  epoch 8/25  avg loss 0.0153
+  epoch 9/25  avg loss 0.0135
+  epoch 10/25  avg loss 0.0135
+  epoch 11/25  avg loss 0.0124
+  epoch 12/25  avg loss 0.0111
+  epoch 13/25  avg loss 0.0087
+  epoch 14/25  avg loss 0.0084
+  epoch 15/25  avg loss 0.0070
+  epoch 16/25  avg loss 0.0061
+  epoch 17/25  avg loss 0.0065
+  epoch 18/25  avg loss 0.0057
+  epoch 19/25  avg loss 0.0059
+  epoch 20/25  avg loss 0.0047
+  epoch 21/25  avg loss 0.0045
+  epoch 22/25  avg loss 0.0042
+  epoch 23/25  avg loss 0.0046
+  epoch 24/25  avg loss 0.0040
+  epoch 25/25  avg loss 0.0037
+  DKG-TLAN_wo_MultiScale: acc=0.9942 f1=0.9583 roc_auc=0.9978 pr_auc=0.9813
+
+=== Training DKG-TLAN_wo_Gating ===
+  epoch 1/25  avg loss 0.0520
+  epoch 2/25  avg loss 0.0339
+  epoch 3/25  avg loss 0.0234
+  epoch 4/25  avg loss 0.0179
+  epoch 5/25  avg loss 0.0148
+  epoch 6/25  avg loss 0.0117
+  epoch 7/25  avg loss 0.0091
+  epoch 8/25  avg loss 0.0075
+  epoch 9/25  avg loss 0.0063
+  epoch 10/25  avg loss 0.0056
+  epoch 11/25  avg loss 0.0049
+  epoch 12/25  avg loss 0.0044
+  epoch 13/25  avg loss 0.0043
+  epoch 14/25  avg loss 0.0038
+  epoch 15/25  avg loss 0.0037
+  epoch 16/25  avg loss 0.0035
+  epoch 17/25  avg loss 0.0033
+  epoch 18/25  avg loss 0.0028
+  epoch 19/25  avg loss 0.0028
+  epoch 20/25  avg loss 0.0026
+  epoch 21/25  avg loss 0.0027
+  epoch 22/25  avg loss 0.0025
+  epoch 23/25  avg loss 0.0022
+  epoch 24/25  avg loss 0.0019
+  epoch 25/25  avg loss 0.0020
+  DKG-TLAN_wo_Gating: acc=0.9969 f1=0.9794 roc_auc=0.9981 pr_auc=0.9903
+
+=== Training DKG-TLAN_wo_GMM ===
+  epoch 1/25  avg loss 0.0529
+  epoch 2/25  avg loss 0.0444
+  epoch 3/25  avg loss 0.0349
+  epoch 4/25  avg loss 0.0258
+  epoch 5/25  avg loss 0.0193
+  epoch 6/25  avg loss 0.0162
+  epoch 7/25  avg loss 0.0139
+  epoch 8/25  avg loss 0.0125
+  epoch 9/25  avg loss 0.0113
+  epoch 10/25  avg loss 0.0099
+  epoch 11/25  avg loss 0.0089
+  epoch 12/25  avg loss 0.0088
+  epoch 13/25  avg loss 0.0070
+  epoch 14/25  avg loss 0.0081
+  epoch 15/25  avg loss 0.0065
+  epoch 16/25  avg loss 0.0061
+  epoch 17/25  avg loss 0.0052
+  epoch 18/25  avg loss 0.0054
+  epoch 19/25  avg loss 0.0049
+  epoch 20/25  avg loss 0.0055
+  epoch 21/25  avg loss 0.0047
+  epoch 22/25  avg loss 0.0040
+  epoch 23/25  avg loss 0.0047
+  epoch 24/25  avg loss 0.0043
+  epoch 25/25  avg loss 0.0040
+  DKG-TLAN_wo_GMM: acc=0.9891 f1=0.9285 roc_auc=0.9922 pr_auc=0.9652
+
+=== Training baseline ResNet-50 ===
+  epoch 1/25  avg loss 0.0470
+  epoch 2/25  avg loss 0.0374
+  epoch 3/25  avg loss 0.0408
+  epoch 4/25  avg loss 0.0283
+  epoch 5/25  avg loss 0.0314
+  epoch 6/25  avg loss 0.0365
+  epoch 7/25  avg loss 0.0245
+  epoch 8/25  avg loss 0.0253
+  epoch 9/25  avg loss 0.0347
+  epoch 10/25  avg loss 0.0256
+  epoch 11/25  avg loss 0.0244
+  epoch 12/25  avg loss 0.0276
+  epoch 13/25  avg loss 0.0225
+  epoch 14/25  avg loss 0.0311
+  epoch 15/25  avg loss 0.0263
+  epoch 16/25  avg loss 0.0281
+  epoch 17/25  avg loss 0.0188
+  epoch 18/25  avg loss 0.0298
+  epoch 19/25  avg loss 0.0241
+  epoch 20/25  avg loss 0.0238
+  epoch 21/25  avg loss 0.0216
+  epoch 22/25  avg loss 0.0204
+  epoch 23/25  avg loss 0.0206
+  epoch 24/25  avg loss 0.0248
+  epoch 25/25  avg loss 0.0247
+  ResNet-50: acc=0.9749 f1=0.7321 roc_auc=0.9699 pr_auc=0.7499
+
+=== Training baseline LSTM ===
+  epoch 1/25  avg loss 0.0587
+  epoch 2/25  avg loss 0.0520
+  epoch 3/25  avg loss 0.0515
+  epoch 4/25  avg loss 0.0482
+  epoch 5/25  avg loss 0.0427
+  epoch 6/25  avg loss 0.0370
+  epoch 7/25  avg loss 0.0342
+  epoch 8/25  avg loss 0.0333
+  epoch 9/25  avg loss 0.0310
+  epoch 10/25  avg loss 0.0288
+  epoch 11/25  avg loss 0.0284
+  epoch 12/25  avg loss 0.0271
+  epoch 13/25  avg loss 0.0267
+  epoch 14/25  avg loss 0.0262
+  epoch 15/25  avg loss 0.0276
+  epoch 16/25  avg loss 0.0260
+  epoch 17/25  avg loss 0.0260
+  epoch 18/25  avg loss 0.0257
+  epoch 19/25  avg loss 0.0256
+  epoch 20/25  avg loss 0.0244
+  epoch 21/25  avg loss 0.0254
+  epoch 22/25  avg loss 0.0242
+  epoch 23/25  avg loss 0.0280
+  epoch 24/25  avg loss 0.0234
+  epoch 25/25  avg loss 0.0254
+  LSTM: acc=0.9669 f1=0.6192 roc_auc=0.9418 pr_auc=0.6729
+
+=== Training baseline GNN ===
+  epoch 1/25  avg loss 0.0574
+  epoch 2/25  avg loss 0.0471
+  epoch 3/25  avg loss 0.0405
+  epoch 4/25  avg loss 0.0345
+  epoch 5/25  avg loss 0.0298
+  epoch 6/25  avg loss 0.0264
+  epoch 7/25  avg loss 0.0238
+  epoch 8/25  avg loss 0.0215
+  epoch 9/25  avg loss 0.0195
+  epoch 10/25  avg loss 0.0177
+  epoch 11/25  avg loss 0.0162
+  epoch 12/25  avg loss 0.0148
+  epoch 13/25  avg loss 0.0136
+  epoch 14/25  avg loss 0.0126
+  epoch 15/25  avg loss 0.0117
+  epoch 16/25  avg loss 0.0110
+  epoch 17/25  avg loss 0.0103
+  epoch 18/25  avg loss 0.0097
+  epoch 19/25  avg loss 0.0091
+  epoch 20/25  avg loss 0.0086
+  epoch 21/25  avg loss 0.0081
+  epoch 22/25  avg loss 0.0077
+  epoch 23/25  avg loss 0.0073
+  epoch 24/25  avg loss 0.0069
+  epoch 25/25  avg loss 0.0067
+  GNN: acc=0.9942 f1=0.9489 roc_auc=0.9942 pr_auc=0.9805
+
+Saved results to C:\Gitrepos\DKG-TLAN\benchmarks\synthetic_eval_results.json

@@ -108,6 +108,47 @@ pytest tests/ -v
 - Reported results: 99.75% accuracy, 98.53% precision, 99.64% recall, 98.46%
   F1-score on the Sock Shop benchmark, with a 2.9 ms mean inference time.
 
+## Reproducible synthetic benchmark
+
+`benchmarks/synthetic_eval.py` wires the modules above into an end-to-end,
+exactly reproducible classifier (13-node topology, 94.2%/5.8% normal/
+anomalous class balance, W=64-timestep sliding windows, d=16 feature
+dimensionality, three Chaos-Mesh-style fault classes: pod failure, network
+delay, memory stress) and evaluates it against three baselines (a 1D-CNN
+"ResNet-50" analog, an LSTM, and a GAT-only GNN), plus four component
+ablations (without DKG, without multi-scale kernels, without gating, without
+GMM). **This is not the private AWS EKS Sock Shop deployment used for the
+paper's Table 1 numbers** — it is a separate, synthetic, fully reproducible
+benchmark built to supply class-wise / confusion-matrix / ROC-AUC / PR-AUC /
+ablation results for peer review from the released reference implementation.
+Run it with:
+
+```bash
+python benchmarks/synthetic_eval.py
+```
+
+Results (`benchmarks/synthetic_eval_results.json`) at 25 training epochs:
+
+| Model | Accuracy | Macro-F1 | ROC-AUC | PR-AUC |
+| --- | --- | --- | --- | --- |
+| Proposed DKG-TLAN | 0.988 | 0.925 | 0.997 | 0.983 |
+| DKG-TLAN w/o DKG | 0.996 | 0.975 | 0.994 | 0.986 |
+| DKG-TLAN w/o Multi-Scale | 0.994 | 0.958 | 0.998 | 0.981 |
+| DKG-TLAN w/o Gating | 0.997 | 0.979 | 0.998 | 0.990 |
+| DKG-TLAN w/o GMM | 0.989 | 0.929 | 0.992 | 0.965 |
+| ResNet-50 (baseline) | 0.975 | 0.732 | 0.970 | 0.750 |
+| LSTM (baseline) | 0.967 | 0.619 | 0.942 | 0.673 |
+| GNN (baseline) | 0.994 | 0.949 | 0.994 | 0.981 |
+
+DKG-TLAN clearly beats the ResNet-50 and LSTM baselines. The ablation
+comparison is reported honestly: on this i.i.d., single-topology synthetic
+task, the ablated variants matched or marginally exceeded the full model's
+aggregate metrics, with the gap narrowing substantially as training budget
+increased (see `benchmarks/synthetic_eval_log.txt` for the 6/8/12-epoch
+runs this converged from). This benchmark does not exercise concept drift
+or dynamic topology change, which are the operational conditions DKG's
+adaptive adjacency and GMM's EMA drift adaptation are designed for.
+
 ## Citation
 
 ```

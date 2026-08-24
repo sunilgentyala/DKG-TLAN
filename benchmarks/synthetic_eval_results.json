@@ -1,0 +1,502 @@
+{
+  "config": {
+    "num_nodes": 13,
+    "window_len": 64,
+    "feature_dim": 16,
+    "hidden_dim": 32,
+    "num_classes": 4,
+    "class_names": [
+      "Normal",
+      "Pod Failure",
+      "Network Delay",
+      "Memory Stress"
+    ],
+    "n_windows": 15000,
+    "anomaly_rate": 0.058,
+    "train_frac": 0.7,
+    "epochs": 25,
+    "seed": 1234
+  },
+  "results_on_original_imbalanced_test_set": {
+    "Proposed_DKG-TLAN": {
+      "accuracy": 0.9875555555555555,
+      "precision_macro": 0.9031746337109087,
+      "recall_macro": 0.9642258522727274,
+      "f1_macro": 0.9251569602104968,
+      "roc_auc_macro": 0.997109389821824,
+      "pr_auc_macro": 0.9827213885643781,
+      "confusion_matrix": [
+        [
+          4181,
+          39,
+          4,
+          0
+        ],
+        [
+          1,
+          79,
+          0,
+          0
+        ],
+        [
+          10,
+          1,
+          89,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          95
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9973759541984732,
+          "recall": 0.9898200757575758,
+          "f1": 0.9935836501901141,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.6583333333333333,
+          "recall": 0.9875,
+          "f1": 0.79,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 0.956989247311828,
+          "recall": 0.89,
+          "f1": 0.9222797927461139,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 1.0,
+          "recall": 0.9895833333333334,
+          "f1": 0.9947643979057592,
+          "support": 96
+        }
+      }
+    },
+    "DKG-TLAN_wo_DKG": {
+      "accuracy": 0.9964444444444445,
+      "precision_macro": 0.9902942966945766,
+      "recall_macro": 0.962232481060606,
+      "f1_macro": 0.975251268439025,
+      "roc_auc_macro": 0.9942268082889067,
+      "pr_auc_macro": 0.9855031717008121,
+      "confusion_matrix": [
+        [
+          4223,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          80,
+          0,
+          0
+        ],
+        [
+          13,
+          0,
+          87,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          94
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9969310670443815,
+          "recall": 0.9997632575757576,
+          "f1": 0.9983451536643027,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.975609756097561,
+          "recall": 1.0,
+          "f1": 0.9876543209876543,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 0.9886363636363636,
+          "recall": 0.87,
+          "f1": 0.925531914893617,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 1.0,
+          "recall": 0.9791666666666666,
+          "f1": 0.9894736842105263,
+          "support": 96
+        }
+      }
+    },
+    "DKG-TLAN_wo_MultiScale": {
+      "accuracy": 0.9942222222222222,
+      "precision_macro": 0.9948525950742735,
+      "recall_macro": 0.9267708333333333,
+      "f1_macro": 0.9583473668187612,
+      "roc_auc_macro": 0.9978418373745819,
+      "pr_auc_macro": 0.9813107332011218,
+      "confusion_matrix": [
+        [
+          4224,
+          0,
+          0,
+          0
+        ],
+        [
+          13,
+          67,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          88,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          95
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9941162626500353,
+          "recall": 1.0,
+          "f1": 0.9970494511979228,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.9852941176470589,
+          "recall": 0.8375,
+          "f1": 0.9054054054054054,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 1.0,
+          "recall": 0.88,
+          "f1": 0.9361702127659575,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 1.0,
+          "recall": 0.9895833333333334,
+          "f1": 0.9947643979057592,
+          "support": 96
+        }
+      }
+    },
+    "DKG-TLAN_wo_Gating": {
+      "accuracy": 0.9968888888888889,
+      "precision_macro": 0.9961465280873667,
+      "recall_macro": 0.9648958333333334,
+      "f1_macro": 0.9793745099482036,
+      "roc_auc_macro": 0.9980802649798075,
+      "pr_auc_macro": 0.990294054123516,
+      "confusion_matrix": [
+        [
+          4224,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          80,
+          0,
+          0
+        ],
+        [
+          13,
+          0,
+          87,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          95
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9969317913618126,
+          "recall": 1.0,
+          "f1": 0.9984635385888193,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.9876543209876543,
+          "recall": 1.0,
+          "f1": 0.9937888198757764,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 1.0,
+          "recall": 0.87,
+          "f1": 0.93048128342246,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 1.0,
+          "recall": 0.9895833333333334,
+          "f1": 0.9947643979057592,
+          "support": 96
+        }
+      }
+    },
+    "DKG-TLAN_wo_GMM": {
+      "accuracy": 0.9891111111111112,
+      "precision_macro": 0.9228734627633669,
+      "recall_macro": 0.9381936553030302,
+      "f1_macro": 0.928501135045405,
+      "roc_auc_macro": 0.992154794140055,
+      "pr_auc_macro": 0.9652174348890725,
+      "confusion_matrix": [
+        [
+          4197,
+          22,
+          5,
+          0
+        ],
+        [
+          8,
+          72,
+          0,
+          0
+        ],
+        [
+          12,
+          0,
+          88,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          94
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9952572919136827,
+          "recall": 0.9936079545454546,
+          "f1": 0.9944319393436797,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.75,
+          "recall": 0.9,
+          "f1": 0.8181818181818182,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 0.946236559139785,
+          "recall": 0.88,
+          "f1": 0.9119170984455959,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 1.0,
+          "recall": 0.9791666666666666,
+          "f1": 0.9894736842105263,
+          "support": 96
+        }
+      }
+    },
+    "ResNet-50": {
+      "accuracy": 0.9748888888888889,
+      "precision_macro": 0.7896046876332106,
+      "recall_macro": 0.6945549242424243,
+      "f1_macro": 0.7320984951075653,
+      "roc_auc_macro": 0.9698941509519212,
+      "pr_auc_macro": 0.7499276763743572,
+      "confusion_matrix": [
+        [
+          4220,
+          0,
+          4,
+          0
+        ],
+        [
+          23,
+          28,
+          29,
+          0
+        ],
+        [
+          38,
+          17,
+          45,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          94
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9857509927587013,
+          "recall": 0.9990530303030303,
+          "f1": 0.9923574368018813,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.5957446808510638,
+          "recall": 0.35,
+          "f1": 0.4409448818897638,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 0.5769230769230769,
+          "recall": 0.45,
+          "f1": 0.5056179775280899,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 1.0,
+          "recall": 0.9791666666666666,
+          "f1": 0.9894736842105263,
+          "support": 96
+        }
+      }
+    },
+    "LSTM": {
+      "accuracy": 0.9668888888888889,
+      "precision_macro": 0.6762467282939062,
+      "recall_macro": 0.6054332386363636,
+      "f1_macro": 0.6191645644108901,
+      "roc_auc_macro": 0.9417589672982849,
+      "pr_auc_macro": 0.672938607425341,
+      "confusion_matrix": [
+        [
+          4219,
+          3,
+          2,
+          0
+        ],
+        [
+          33,
+          26,
+          13,
+          8
+        ],
+        [
+          46,
+          30,
+          15,
+          9
+        ],
+        [
+          0,
+          2,
+          3,
+          91
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9816193578408562,
+          "recall": 0.9988162878787878,
+          "f1": 0.9901431588828914,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.4262295081967213,
+          "recall": 0.325,
+          "f1": 0.36879432624113473,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 0.45454545454545453,
+          "recall": 0.15,
+          "f1": 0.22556390977443608,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 0.8425925925925926,
+          "recall": 0.9479166666666666,
+          "f1": 0.8921568627450981,
+          "support": 96
+        }
+      }
+    },
+    "GNN": {
+      "accuracy": 0.9942222222222222,
+      "precision_macro": 0.9645279428510295,
+      "recall_macro": 0.9358641098484848,
+      "f1_macro": 0.9489348035604266,
+      "roc_auc_macro": 0.994248218208628,
+      "pr_auc_macro": 0.9804637035945136,
+      "confusion_matrix": [
+        [
+          4221,
+          0,
+          3,
+          0
+        ],
+        [
+          2,
+          70,
+          0,
+          8
+        ],
+        [
+          11,
+          0,
+          89,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          94
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.9969296173830893,
+          "recall": 0.9992897727272727,
+          "f1": 0.9981082998344762,
+          "support": 4224
+        },
+        "Pod Failure": {
+          "precision": 0.9722222222222222,
+          "recall": 0.875,
+          "f1": 0.9210526315789473,
+          "support": 80
+        },
+        "Network Delay": {
+          "precision": 0.967391304347826,
+          "recall": 0.89,
+          "f1": 0.9270833333333334,
+          "support": 100
+        },
+        "Memory Stress": {
+          "precision": 0.9215686274509803,
+          "recall": 0.9791666666666666,
+          "f1": 0.9494949494949495,
+          "support": 96
+        }
+      }
+    }
+  }
+}

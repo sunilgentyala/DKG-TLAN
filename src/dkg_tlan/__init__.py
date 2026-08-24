@@ -1,7 +1,7 @@
 """DKG-TLAN: Dynamic Knowledge Graph with Temporal Logical Attention Network.
 
 Reference implementation of the architecture described in:
-Mudusu, S.K., Pendyala, M., Gentyala, S. and Darisi, S.K., "Anomaly Detection
+Mudusu, S.K., Gentyala, S. and Pendyala, M., "Anomaly Detection
 by using Dynamic Knowledge Graph with Temporal Attention Network."
 """
 

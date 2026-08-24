@@ -111,7 +111,7 @@ pytest tests/ -v
 ## Citation
 
 ```
-S. K. Mudusu, M. Pendyala, S. Gentyala, and S. K. Darisi,
+S. K. Mudusu, S. Gentyala, and M. Pendyala,
 "Anomaly Detection by using Dynamic Knowledge Graph with Temporal Attention Network,"
 under submission, 2026.
 ```
@@ -119,9 +119,8 @@ under submission, 2026.
 ## Authors
 
 - Sunil Kumar Mudusu, Church Mutual Insurance Company
-- Manasa Pendyala, Oracle
 - Sunil Gentyala, HCLTech (HCL America Inc.)
-- Suresh Kumar Darisi, Rocket Software Inc.
+- Manasa Pendyala, Oracle
 
 ## License
 

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: If you use this software in your research, please cite it as below.
+type: software
+title: DKG-TLAN
+authors:
+- family-names: Mudusu
+  given-names: Sunil Kumar
+- family-names: Gentyala
+  given-names: Sunil
+  affiliation: HCLTech (HCL America Inc.), Dallas, TX, USA
+  orcid: https://orcid.org/0009-0005-2642-3479
+  email: sunil.gentyala@ieee.org
+- family-names: Pendyala
+  given-names: Manasa
+repository-code: https://github.com/sunilgentyala/DKG-TLAN
+license: MIT
+abstract: Dynamic Knowledge Graph with Temporal Logical Attention Network for cloud-native
+  anomaly detection and root-cause localization
+keywords:
+- anomaly-detection
+- cloud-native
+- knowledge-graph
+- machine-learning
+- observability
+- python
+- root-cause-analysis
+- temporal-attention

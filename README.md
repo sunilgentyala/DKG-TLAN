@@ -151,11 +151,17 @@ adaptive adjacency and GMM's EMA drift adaptation are designed for.
 
 ## Citation
 
+```bibtex
+@unpublished{mudusu2026dkgtlan,
+  title  = {Anomaly Detection by using Dynamic Knowledge Graph with Temporal
+            Attention Network},
+  author = {Mudusu, Sunil Kumar and Gentyala, Sunil and Pendyala, Manasa},
+  year   = {2026},
+  note   = {Under submission}
+}
 ```
-S. K. Mudusu, S. Gentyala, and M. Pendyala,
-"Anomaly Detection by using Dynamic Knowledge Graph with Temporal Attention Network,"
-under submission, 2026.
-```
+
+To cite the software itself, use [`CITATION.cff`](CITATION.cff).
 
 ## Authors
 

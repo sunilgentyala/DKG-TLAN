@@ -12,6 +12,19 @@ authors:
   email: sunil.gentyala@ieee.org
 - family-names: Pendyala
   given-names: Manasa
+preferred-citation:
+  type: conference-paper
+  title: Anomaly Detection by using Dynamic Knowledge Graph with Temporal Attention Network
+  authors:
+  - family-names: Mudusu
+    given-names: Sunil Kumar
+  - family-names: Gentyala
+    given-names: Sunil
+  - family-names: Pendyala
+    given-names: Manasa
+  collection-title: 2026 4th International Conference on Intelligent Cyber Physical Systems and Internet of Things (ICoICI)
+  year: 2026
+  doi: 10.1109/ICoICI69824.2026.11724336
 repository-code: https://github.com/sunilgentyala/DKG-TLAN
 license: MIT
 abstract: Dynamic Knowledge Graph with Temporal Logical Attention Network for cloud-native

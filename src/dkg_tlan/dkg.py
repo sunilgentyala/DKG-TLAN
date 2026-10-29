@@ -28,7 +28,8 @@ def dependency_weight(component_sequence: torch.Tensor, num_components: int) -> 
         i, j = int(component_sequence[t]), int(component_sequence[t + 1])
         transitions[i, j] += 1.0
         occ[i] += 1.0
-    occ[-1] += 1.0 if component_sequence.shape[0] else 0.0
+    if component_sequence.shape[0]:
+        occ[int(component_sequence[-1])] += 1.0
 
     denom = torch.sqrt(occ.unsqueeze(1) * occ.unsqueeze(0)).clamp_min(1e-8)
     return transitions / denom

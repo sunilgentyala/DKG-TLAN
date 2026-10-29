@@ -4,10 +4,12 @@
 framework for anomaly detection and root-cause localization in cloud-native
 microservice environments.
 
-[![Paper: Under Submission](https://img.shields.io/badge/paper-under%20submission-lightgrey)]()
+[![Paper: IEEE Xplore](https://img.shields.io/badge/paper-IEEE%20Xplore-00629B)](https://ieeexplore.ieee.org/document/11724336)
+[![DOI](https://img.shields.io/badge/DOI-10.1109%2FICoICI69824.2026.11724336-blue)](https://doi.org/10.1109/ICoICI69824.2026.11724336)
+[![CI](https://github.com/sunilgentyala/DKG-TLAN/actions/workflows/ci.yml/badge.svg)](https://github.com/sunilgentyala/DKG-TLAN/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-📄 Site: https://sunilgentyala.github.io/DKG-TLAN/
+Site: https://sunilgentyala.github.io/DKG-TLAN/
 
 ## Overview
 
@@ -173,6 +175,10 @@ To cite the software itself, use [`CITATION.cff`](CITATION.cff).
 - Sunil Kumar Mudusu, Church Mutual Insurance Company
 - Sunil Gentyala, HCLTech (HCL America Inc.)
 - Manasa Pendyala, Oracle
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for how to report a vulnerability.
 
 ## License
 
